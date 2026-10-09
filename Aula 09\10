@@ -1,0 +1,93 @@
+// Média entre o Maior e o Menor Valor:
+
+#include <stdio.h>
+
+int max_valor(int a, int b, int c){
+
+    int maior;
+
+    if (a > b && a > c){
+        maior = a;
+        return maior;
+    } 
+    else if (b > c) {
+        maior = b;
+        return maior;
+    }
+    else {
+        maior = c;
+        return maior;
+    }
+}
+int min_valor(int a, int b, int c){
+
+    int menor;
+
+    if (a < b && a < c){
+        menor = a;
+        return menor;
+    } 
+    else if (b < c) {
+        menor = b;
+        return menor;
+    }
+    else {
+        menor = c;
+        return menor;
+    }
+
+}
+float media_extremos(int a, int b, int c){
+
+    float media = (float)(max_valor(a, b, c) + min_valor(a, b, c)) / 2;
+    return media;
+}
+
+int main ()
+{
+    int num1, num2, num3;
+    
+    scanf("%d", &num1);
+    scanf("%d", &num2);
+    scanf("%d", &num3);
+
+    float media = media_extremos(num1, num2, num3);
+
+    printf("Média: %.2f\n", media);
+
+
+    return 0;
+}
+
+// n_dados:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int jogar_dado(){
+    int rando = (rand() % 6 + 1);
+    return rando;
+}
+
+int soma_dados (int n) {
+    for (int i = 0; i < n;  i++) {
+        int dado = jogar_dado();
+        int soma = soma + dado;
+        return soma;
+    }
+
+}
+
+int main (){
+    srand(time(NULL));
+
+    int n;
+    scanf("%d", &n);
+
+    int soma = soma_dados(n);
+    printf("%d\n", soma);
+
+
+    return 0;
+}
