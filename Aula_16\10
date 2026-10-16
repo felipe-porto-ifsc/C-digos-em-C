@@ -1,0 +1,32 @@
+// Código de somatório.
+
+#include <stdio.h>
+
+float somatorio(float x, int n)
+{
+    float soma, i;
+    soma = 0;
+    if (x < 0) return -1;
+
+    for (i=1; i<=n; i++)
+        {
+            soma = x/i + soma;
+        }
+    return soma;
+}
+
+int main()
+{
+    float x;
+    int n;
+
+    printf("Digite o valor de x: ");
+    scanf("%f", &x);
+    printf("Digite a quantidade de vezes que será executado: ");
+    scanf("%d", &n);
+
+    float resultado = somatorio(x,n);
+    printf("O resultado da somatória é: %.2f\n", resultado);
+
+    return 0;
+}
